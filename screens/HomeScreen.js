@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from "react-native";
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome to Fitness Tracker!</Text>
+      <Text style={styles.title}>Welcome to Fitness Tracker! </Text>
     </View>
   );
 }
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5f5f5",
   },
   title: {
-    fontSize: 24,
+    fontSize: 50,
     fontWeight: "bold",
     color: "#333",
   },
