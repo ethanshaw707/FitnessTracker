@@ -8,6 +8,24 @@ export default function MyStatsScreen() {
   const [goalWeight, setGoalWeight] = useState("");
   const [age, setAge] = useState("");
 
+  const calculateCalories = () => {
+    if (!weight || !height || !age || !activityLevel) return "Enter all fields";
+
+    let BMR = 
+    10 * parseFloat(weight) +
+    6.25 * parseFloat(height) -
+    5 * parseFloat(age) +
+    5;
+    
+    const activityFactors ={
+      low: 1.2,
+      moderate: 1.55,
+      high: 1.9,
+    };
+
+    return (BMR * (activityFactors[activityLevel.toLowerCase()] || 1.2)).toFixed(0);
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>My Stats</Text>
@@ -41,6 +59,11 @@ export default function MyStatsScreen() {
         value={age}
         onChangeText={setAge}
       />
+
+       {/* Display the calculated calorie needs */}
+       <Text style={styles.caloriesText}>
+        Estimated Calories Needed: {calculateCalories()} kcal/day
+      </Text>
     </View>
   );
 }
@@ -65,5 +88,12 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     paddingHorizontal: 10,
     backgroundColor: "#fff",
+  },
+  caloriesText: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginTop: 20,
+    textAlign: "center",
+    color: "black",
   },
 });
