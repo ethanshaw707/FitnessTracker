@@ -2,6 +2,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/HomeScreen";
 import MyStatsScreen from "../screens/MyStatsScreen";
+import WorkoutScreen from "../screens/WorkoutScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -11,6 +12,7 @@ export default function AppIndex() {
     <Tab.Navigator>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="My Stats" component={MyStatsScreen} />
+      <Tab.Screen name="Workouts" component={WorkoutScreen}/>
     </Tab.Navigator>
   );
 }
