@@ -33,12 +33,14 @@ export default function WorkoutScreen() {
     return  (
         <View style={styles.container}>
           <Text style={styles.title}>Log Your Workout</Text>
+          <Text style={styles.title}>Exercise Name</Text>
           <TextInput
             style={styles.input}
             placeholder="Exercise Name"
             value={exercise}
             onChangeText={setExercise}
           />
+          <Text style={styles.title}>Duration "Minutes"</Text>
           <TextInput
             style={styles.input}
             placeholder="Duration (minutes)"
@@ -46,6 +48,7 @@ export default function WorkoutScreen() {
             onChangeText={setDuration}
             keyboardType="numeric"
           />
+          <Text style={styles.title}>Calories Burned</Text>
           <TextInput
             style={styles.input}
             placeholder="Calories Burned"
