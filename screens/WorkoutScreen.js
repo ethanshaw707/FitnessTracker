@@ -33,17 +33,19 @@ export default function WorkoutScreen() {
     return  (
         <View style={styles.container}>
           <Text style={styles.title}>Log Your Workout</Text>
-          <Text style={styles.title}>Exercise Name</Text>
+          <Text style={styles.title}>Exercise</Text>
           <TextInput
             style={styles.input}
             placeholder="Exercise Name"
+            placeholderTextColor={"black"}
             value={exercise}
             onChangeText={setExercise}
           />
-          <Text style={styles.title}>Duration "Minutes"</Text>
+          <Text style={styles.title}>Duration</Text>
           <TextInput
             style={styles.input}
             placeholder="Duration (minutes)"
+            placeholderTextColor={"black"}
             value={duration}
             onChangeText={setDuration}
             keyboardType="numeric"
@@ -51,7 +53,8 @@ export default function WorkoutScreen() {
           <Text style={styles.title}>Calories Burned</Text>
           <TextInput
             style={styles.input}
-            placeholder="Calories Burned"
+            placeholder="Calories"
+            placeholderTextColor={"black"}
             value={calories}
             onChangeText={setCalories}
             keyboardType="numeric"
