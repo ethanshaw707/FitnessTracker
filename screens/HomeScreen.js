@@ -23,8 +23,7 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to Fitness Tracker! </Text>
-=======
-      <Text style={styles.title}>Welcome to Fitness Tracker!</Text>
+
       <Text style={styles.steps}>Steps Taken: {steps}</Text>
     </View>
   );
