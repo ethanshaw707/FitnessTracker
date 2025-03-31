@@ -1,50 +1,35 @@
-# Welcome to your Expo app 👋
+# Overview
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+In this project, we worked to combine a few different modules in order to have a more complete program. We worked to use react native, JavaScript, and Firebase. Using these tools, we made a fitness tracker application. One of the features is that it can use the built in sensor of the phone in order to track the steps that someone takes. It can also plan future workouts, log past ones, and it can tell you how many calories you should eat based on your personal stats (i.e. weight, height)
 
-## Get started
+We wrote this software because we knew that physical fitness is something crucial, and for most people it is something that is pushed aside. We also knew that most fitness apps out there cost money in order to use. We decided to make our own, with the hopes of deepening our understanding of how to connect Firebase to an app using Javascript.
 
-1. Install dependencies
+# Development Environment
 
-   ```bash
-   npm install
-   ```
+Tools used:
+- Visual Studio Code (VS Code)
+- Expo
+- React Native Debugger
+- Git
+Programming Language and Libraries Used:
+- JavaScript: The primary language used for developing the application.
+- React Native: Framework for building cross-platform mobile applications.
+- Expo: A framework and platform for universal React applications.
+- @react-native-community/datetimepicker: Library for implementing date and time pickers in the app.
+- React Hooks: Used for managing state and lifecycle methods in functional components.
+- Firebase- Used to create the database for the app
+- React Native StyleSheet: Styles components in the app
 
-2. Start the app
 
-   ```bash
-    npx expo start
-   ```
+# Useful Websites
 
-In the output, you'll find options to open the app in a
+{Make a list of websites that you found helpful in this project}
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Firebase Documentation -(https://firebase.google.com/docs/)
+- Expo Documentation (https://docs.expo.dev/)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+# Future Work
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- We want to add more features from the tracking of the phone. There are many things in the health app and that are tracked by the phone that we could add to the fitness app, for example time standing. 
+- We would like to add suggested workouts, so creating a library of workouts that the user could choose to fit their specific needs. 
+- We would like to improve the visual aspect of the application to make it look better. We can add things like different fonts, images, and backgrounds. 
