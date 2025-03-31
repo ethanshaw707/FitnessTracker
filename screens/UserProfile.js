@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -10,6 +10,8 @@ import {
   Keyboard,
   Platform,
 } from "react-native";
+import { db } from "../firebaseConfig";
+import { collection, doc, setDoc, getDoc } from "firebase/firestore";
 
 export default function UserProfile() {
   const [name, setName] = useState("");
@@ -18,10 +20,38 @@ export default function UserProfile() {
   const [age, setAge] = useState("");
   const [weight, setWeight] = useState("");
 
-  const handleSave = () => {
-    console.log("User data saved:", { name, email, phone, age, weight });
-    alert("Profile updated successfully!");
+  const handleSave = async () => {
+    const userProfile = { name, email, phone, age: parseInt(age, 10), weight: parseFloat(weight) };
+
+    try {
+      await setDoc(doc(db, "userProfiles", "defaultUser"), userProfile); // Save to Firestore
+      alert("Profile updated successfully!");
+    } catch (error) {
+      console.error("Error saving user profile:", error);
+    }
   };
+
+  const loadProfile = async () => {
+    try {
+      const docRef = doc(db, "userProfiles", "defaultUser");
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        setName(data.name || "");
+        setEmail(data.email || "");
+        setPhone(data.phone || "");
+        setAge(data.age ? data.age.toString() : "");
+        setWeight(data.weight ? data.weight.toString() : "");
+      }
+    } catch (error) {
+      console.error("Error loading user profile:", error);
+    }
+  };
+
+  useEffect(() => {
+    loadProfile();
+  }, []);
 
   return (
     <KeyboardAvoidingView
