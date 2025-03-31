@@ -43,43 +43,49 @@ export default function WorkoutScreen() {
     }
   };
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Log Your Workout</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Exercise Name"
-        value={exercise}
-        onChangeText={setExercise}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Duration (minutes)"
-        value={duration}
-        onChangeText={setDuration}
-        keyboardType="numeric"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Calories Burned"
-        value={calories}
-        onChangeText={setCalories}
-        keyboardType="numeric"
-      />
-      <Button title="Save Workout" onPress={saveWorkout} />
-
-      <Text style={styles.title}>Workout History</Text>
-      <FlatList
-        data={workouts}
-        keyExtractor={(item) => item.id || item.timestamp.toString()}
-        renderItem={({ item }) => (
-          <Text style={styles.listItem}>
-            {item.exercise} - {item.duration} min - {item.calories} kcal
-          </Text>
-        )}
-      />
-    </View>
-  );
+    return  (
+        <View style={styles.container}>
+          <Text style={styles.title}>Log Your Workout</Text>
+          <Text style={styles.title}>Exercise</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Exercise Name"
+            placeholderTextColor={"black"}
+            value={exercise}
+            onChangeText={setExercise}
+          />
+          <Text style={styles.title}>Duration</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Duration (minutes)"
+            placeholderTextColor={"black"}
+            value={duration}
+            onChangeText={setDuration}
+            keyboardType="numeric"
+          />
+          <Text style={styles.title}>Calories Burned</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Calories"
+            placeholderTextColor={"black"}
+            value={calories}
+            onChangeText={setCalories}
+            keyboardType="numeric"
+          />
+          <Button title="Save Workout" onPress={saveWorkout} />
+          
+          <Text style={styles.title}>Workout History</Text>
+          <FlatList
+            data={workouts}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <Text style={styles.listItem}>
+                {item.exercise} - {item.duration} min - {item.calories} kcal
+              </Text>
+            )}
+          />
+        </View>
+      );
 }
 
 const styles = StyleSheet.create({
